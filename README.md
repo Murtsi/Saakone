@@ -7,7 +7,7 @@ Welcome to the Weather App project! This repository contains two versions of a s
 - **Python Version**: A simple application that fetches and displays weather data.
 - **HTML & JavaScript Version**: A web-based application with a user-friendly interface for displaying weather data.
 
-##Usage
+### Usage
 
 ### Python Version
 
