@@ -1,22 +1,29 @@
 const api = {
-    key: "afaf9f8d48cff6cafd32e23220bcfdbf",
-    base: "https://api.openweathermap.org/data/2.5/"
-  }
+    key:    "bb9d5d8b5a86b29e2d80e6cd44f0c861",
+    base:   "https://api.openweathermap.org/data/3.0"
+  };
   
   const searchbox = document.querySelector('.search-box');
-  searchbox.addEventListener('keypress', setQuery);
+  searchbox.addEventListener('keypress', function(evt) {
+      if (evt.key === 'Enter') {
+          getResults(searchbox.value);
+      }
+  });
   
-  function setQuery(evt) {
-    if (evt.keyCode == 13) {
-      getResults(searchbox.value);
-    }
-  }
-  
-  function getResults (query) {
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-      .then(weather => {
-        return weather.json();
-      }).then(displayResults);
+  function getResults(query) {
+    fetch(`${api.base}/q=${query}&units=metric&appid=${api.key}`)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.json();
+          })
+          .then(data => {
+              displayResults(data);
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+          });
   }
   
   function displayResults (weather) {
