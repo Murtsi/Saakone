@@ -1,8 +1,13 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
 
-    background-image: url('weather1.webp');
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    background-color: #f0f0f08e;
+
+    background-image: url('Html versio\weather.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
