@@ -8,7 +8,7 @@ from tkinter import ttk
 def get_weather():
     city = city_entry.get().strip()
 
-    api_key = "bb9d5d8b5a86b29e2d80e6cd44f0c861"
+    api_key = "YOUR_API_KEY"
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
     print(f"Fetching weather for: {city}")
